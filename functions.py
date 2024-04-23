@@ -3,7 +3,7 @@ from gensim.models import KeyedVectors
 import numpy as np
 
 mt = MeCab.Tagger('')
-wv = KeyedVectors.load_word2vec_format('./wikiextractor/wikiextractor/wiki.vec.pt', binary=True)
+wv = KeyedVectors.load_word2vec_format('./entity_vector.model.bin', binary=True)
 
 # テキストのベクトルを計算
 def text_get_vector(text):
