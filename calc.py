@@ -4,7 +4,7 @@ import numpy as np
 import functions as f
 
 mt = MeCab.Tagger('')
-wv = KeyedVectors.load_word2vec_format('./wikiextractor/wikiextractor/wiki.vec.pt', binary=True)
+wv = KeyedVectors.load_word2vec_format('./entity_vector.model.bin', binary=True)
 
 a = wv['小熊']-wv['子供']
 b = wv['熊']
