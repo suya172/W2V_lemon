@@ -4,4 +4,4 @@ numpy 1.21.5
 spacy 3.7.4
 gensim 4.3.2
 
-model: [日本語 Wikipedia エンティティベクトル](https://www.cl.ecei.tohoku.ac.jp/~m-suzuki/jawiki_vector/)
+model: [日本語 Wikipedia エンティティベクトル](https://www.cl.ecei.tohoku.ac.jp/~m-suzuki/jawiki_vector/) 2017年2月1日版
