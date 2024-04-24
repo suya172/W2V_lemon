@@ -142,17 +142,21 @@ new_list = ['さまざまな縞模様を持った花火の束','中山寺の星�
 old_v = word_list_get_tendency_vector(old_list)
 new_v = word_list_get_tendency_vector(new_list)
 
-for _ in lemon_noun_chunks_list:
-     word = _[0]
-     v = _[1]
+def compare(text, v=None):
+     if v is None:
+          v = text_get_vector(text)
+
      old_similar = cos_sim(v,old_v)
      new_similar = cos_sim(v,new_v)
      if old_similar > new_similar:
-          print(f'{word} {Color.GREEN}{old_similar}{Color.RESET},{new_similar} -> old')
+          print(f'{text} {Color.BOLD}old{Color.RESET} {Color.GREEN}{old_similar}{Color.RESET},{new_similar}')
      if old_similar < new_similar:
-          print(f'{word} {old_similar},{Color.GREEN}{new_similar}{Color.RESET} -> new')
+          print(f'{text} {Color.BOLD}new{Color.RESET} {old_similar},{Color.GREEN}{new_similar}{Color.RESET}')
      if old_similar == new_similar:
-          print(f'{word} {Color.BLUE}{old_similar}{Color.RESET},{Color.BLUE}{new_similar}{Color.RESET} -> draw')
+          print(f'{text} {Color.BOLD}draw{Color.RESET} {Color.BLUE}{old_similar}{Color.RESET},{Color.BLUE}{new_similar}{Color.RESET}')
+
+for _ in lemon_noun_chunks_list:
+     compare(_[0],v=_[1])
 
 print(f'{Color.RED}failed:{failed_list}{Color.RESET}')
           
